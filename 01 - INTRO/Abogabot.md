@@ -47,3 +47,7 @@ graph TD;
     M-->N[Vista de pagos recibidos, dashboard de ingresos];
     N-->O[Vista para actualizar procesos de la demanda y agregar comentarios];
 ```
+## 2. Buyer Persona
+
+[![Buyer Persona - Pagina 1](images/buyerPersonaPageOne.png "Buyer Persona - Pagina 1")](images/buyerPersonaPageOne.png "Buyer Persona - Pagina 1")
+[![Buyer Persona - Pagina 2](images/buyerPersonaPageTwo.png "Buyer Persona - Pagina 1")](images/buyerPersonaPageTwo.png "Buyer Persona - Pagina 2")
