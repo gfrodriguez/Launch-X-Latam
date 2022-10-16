@@ -25,3 +25,25 @@ El cliente, un despacho de abogados, requiere automatizar las demandas que prese
 - Exportar un documento Word con una plantilla que involucre los datos del formulario
 - Vista con pagos, con dashboard de ingresos
 - Actualizar procesos de la demanda y agregar comentarios.
+
+### Diagrama de flujo
+
+Diagrama de flujo de los requerimientos
+
+```mermaid
+graph TD;
+    A[Pagina de Bienvenida] --> B[Cliente];
+    B --> D[Registro Usuarios Nuevos];
+    D --> E;
+    B --> E[Inicio de sesión];
+    E --> G[Formulario de Registro de Demanda];
+    G --> H[Formulario de pago];
+    H --> I[Vista inforamación de demanda y estado];
+    I --> J[Notificaciones al correo sobre avance];
+    A --> C[Administrador];
+    C --> K[Inicio de sesión];
+    K--> L[Notificación nueva demanda];
+    L-->M[Vista para exportar documento demanda prediligenciada];
+    M-->N[Vista de pagos recibidos, dashboard de ingresos];
+    N-->O[Vista para actualizar procesos de la demanda y agregar comentarios];
+```
