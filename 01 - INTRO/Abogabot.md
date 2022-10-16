@@ -6,6 +6,7 @@ El cliente, un despacho de abogados, requiere automatizar las demandas que prese
 
 ### Requisitos generales
 
+- Pagina de bienvenida
 - Formulario de inicio de sesión
 - Página Responsive
 - Colores corporativos azul marino y blanco
