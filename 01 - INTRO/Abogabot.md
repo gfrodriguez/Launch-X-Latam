@@ -51,3 +51,8 @@ graph TD;
 
 [![Buyer Persona - Pagina 1](images/buyerPersonaPageOne.png "Buyer Persona - Pagina 1")](images/buyerPersonaPageOne.png "Buyer Persona - Pagina 1")
 [![Buyer Persona - Pagina 2](images/buyerPersonaPageTwo.png "Buyer Persona - Pagina 1")](images/buyerPersonaPageTwo.png "Buyer Persona - Pagina 2")
+
+## 3. Wireframe
+
+[![Wireframe - Página bienvenida](images/pgina_de_bienvenida.png "Wireframe - Página bienvenida")](images/pgina_de_bienvenida.png "Wireframe - Página bienvenida")
+[![Wireframe - Formulario de Registro](images/formulario_de_registro.png "Wireframe - Formulario de Registro")](images/formulario_de_registro.png "Wireframe - Formulario de Registro")
