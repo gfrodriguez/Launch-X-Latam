@@ -54,5 +54,17 @@ graph TD;
 
 ## 3. Wireframe
 
+### Página de Bienvenida
 [![Wireframe - Página bienvenida](images/pgina_de_bienvenida.png "Wireframe - Página bienvenida")](images/pgina_de_bienvenida.png "Wireframe - Página bienvenida")
+### Formulario de Registro
 [![Wireframe - Formulario de Registro](images/formulario_de_registro.png "Wireframe - Formulario de Registro")](images/formulario_de_registro.png "Wireframe - Formulario de Registro")
+### Recuperar contraseña
+[![Wireframe - Recuperar contraseña](images/recuperar_contrasea.png "Wireframe - Recuperar contraseña")](images/recuperar_contrasea.png "Wireframe - Recuperar contraseña")
+### Página Principal Cliente
+[![Wireframe - Página Principal Cliente](images/pgina_principal_cliente.png "Wireframe - Página Principal Cliente")](images/pgina_principal_cliente.png "Wireframe - Página Principal Cliente")
+### Formulario Demanda
+[![Wireframe - Formulario Demanda](images/formulario_demanda.png "Wireframe - Formulario Demanda")](images/formulario_demanda.png "Wireframe - Formulario Demanda")
+### Formulario Pago
+[![Wireframe - Formulario Pago](images/formulario_pago.png "Wireframe - Formulario Pago")](images/formulario_pago.png "Wireframe - Formulario Pago")
+## Formulario Pago Exitoso
+[![Wireframe - Formulario Pago Exitoso](images/formulario_pago_exitoso.png "Wireframe - Formulario Pago Exitoso")](images/formulario_pago_exitoso.png "Wireframe - Formulario Pago Exitoso")
