@@ -8,7 +8,8 @@
     - [Requisitos para el Usurio - Administrador](#requisitos-para-el-usurio---administrador)
     - [Diagrama de flujo](#diagrama-de-flujo)
   2. [Buyer Persona](#2-buyer-persona)
-  3. [Wireframe](#3-wireframe)
+
+  4. [Wireframe](#3-wireframe)
 #
 
 ## 1. Requerimientos
@@ -61,9 +62,13 @@ graph TD;
 ## 2. Buyer Persona
 
 [![Buyer Persona - Pagina 1](images/buyerPersonaPageOne.png "Buyer Persona - Pagina 1")](images/buyerPersonaPageOne.png "Buyer Persona - Pagina 1")
-[![Buyer Persona - Pagina 2](images/buyerPersonaPageTwo.png "Buyer Persona - Pagina 1")](images/buyerPersonaPageTwo.png "Buyer Persona - Pagina 2")
+[![Buyer Persona - Pagina 2](images/buyerPersonaPageTwo.png "Buyer Persona - Pagina 2")](images/buyerPersonaPageTwo.png "Buyer Persona - Pagina 2")
 
-## 3. Wireframe
+## 3. Público Objetivo
+
+[![Público Objetivo](images/publicoObjetivo.png "Público Objetivo")](images/publicoObjetivo.png "Público Objetivo")
+
+## 4. Wireframe
 
 ### Página de Bienvenida
 [![Wireframe - Página bienvenida](images/pgina_de_bienvenida.png "Wireframe - Página bienvenida")](images/pgina_de_bienvenida.png "Wireframe - Página bienvenida")
