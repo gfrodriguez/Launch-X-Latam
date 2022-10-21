@@ -8,7 +8,7 @@
     - [Requisitos para el Usurio - Administrador](#requisitos-para-el-usurio---administrador)
     - [Diagrama de flujo](#diagrama-de-flujo)
   2. [Buyer Persona](#2-buyer-persona)
-
+  3. [Público Objetivo](#3-público-objetivo)
   4. [Wireframe](#3-wireframe)
 #
 
