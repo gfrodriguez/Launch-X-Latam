@@ -1,19 +1,93 @@
 <!DOCTYPE html>
 <html lang="ES-es">
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <title>Página de bienvenida</title>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.2/js/all.js" crossorigin="anonymous"></script>
     <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"/>
-  </head>
-  <body>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-      crossorigin="anonymous"></script>
-  </body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <style>
+        .masthead {
+            height: 20vh;
+            min-height: 150px;
+            background-image: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        main > .container {
+              padding: 60px 15px 0;
+            }
+    </style>
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-primary text-uppercase" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand link-light" href="#page-top">Página de bienvenida</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menú
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-1 px-0 px-lg-3 rounded link-light" href="#01-INTRO">01-INTRO</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-1 px-0 px-lg-3 rounded link-light" href="#02-HTML">About</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-1 px-0 px-lg-3 rounded link-light" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="bg-secondary masthead text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <div class="row">
+                <h1>Esta es una página de aterrizaje</h1>
+                <p>A partir de esta página se desplegarán las prácticas</p>
+            </div>
+        </div>
+    </header>    
+    <main>
+        <!-- 01-INTRO Section-->
+        <section class="page-section " id="01-INTRO">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2><a href="https://github.com/gfrodriguez/Launch-X-Latam-Backend/blob/main/01%20-%20INTRO/Abogabot.md">Práctica 01-INTRO</a></h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 02-HTML Section-->
+        <section class="page-section text-white mb-0" id="02-HTML">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2><a href="02 - HTML/">Práctica 02-HTML</a></h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section-->
+        <section class="page-section" id="contact">
+            <div class="container"></div>
+        </section>
+    </main>
+
+    <!-- Footer-->
+    <footer class="footer fixed-bottom">
+          <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+
 </html>
