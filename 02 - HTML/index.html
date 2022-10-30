@@ -1,21 +1,288 @@
 <!DOCTYPE html>
-<html lang="ES-es">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-    <title>Pastelería</title>
+<html lang = "es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>Les Petits Douces</title>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.2/js/all.js" crossorigin="anonymous"></script>
     <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <style>
+        .navbar {
+            background-color: #6E5436;
+        }
+
+        .navbar-toggler {
+            background-color: #4C3F2C !important;
+        }
+		
+		main section .btn {
+			background-color: #0696A5 !important;
+		}
+		
+		.masthead {
+            height: 20vh;
+            min-height: 150px;
+            background-image: url('https://images.unsplash.com/photo-1621857426350-ddab819cf0cc');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+		
+		.footer {
+			background-color: #4C3F2C !important;
+		}
+    </style>
+</head>
+
+<body id="page-top" class="d-flex flex-column h-100">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand link-light" href="#page-top"><img alt="logo" src="images/logo.png" height="40"> Les Petits Douces</a>
+            <button class="navbar-toggler font-weight-bold text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menú
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-1 px-0 px-lg-3 rounded link-light" href="#tortas">Tortas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="bg-secondary d-flex align-items-center masthead text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Les Petits Douces</h1>
+                    <p>Dulces placeres para toda la familia</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="practicas" class="mt-2">
+        <!-- Tortas Section-->
+        <section class="page-section " id="01-INTRO">
+            <div class="container">
+                <div class="row">					
+                    <div class="col-lg-4 mb-2 d-flex align-items-stretch">
+                       <div class="card">
+						<img class="card-img-top" src="images/tortas/chocolate.jpg" alt="Torta de Chocolate">
+						<div class="card-body">
+							<h5 class="card-title">Torta de Chocolate</h5>
+							<p class="card-text">Prueba nuestra deliciosa torta de chocolate</p>
+							Adornos
+							<form>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckChocolateEstrella">
+								<label class="form-check-label" for="flexCheckDefault">
+									Estrellas $500/u
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckChocolateMensaje">
+								<label class="form-check-label" for="flexCheckChocolateMensaje">
+									Mensaje personalizado $50/letra
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckChocolateImagen">
+								<label class="form-check-label" for="flexCheckChocolateImagen">
+									Imagen $10.000/letra
+								</label>
+							</div>
+							</form>
+							<a href="#" class="btn btn-primary">Comprar</a>
+						</div>						
+					</div> 
+                    </div>
+					<div class="col-lg-4 mb-2  d-flex align-items-stretch">
+                        <div class="card">
+						<img class="card-img-top" src="images/tortas/fresa.jpg">
+						<div class="card-body">
+							<h5 class="card-title">Torta de Fresas</h5>
+							<p class="card-text">Prueba nuestra deliciosa torta de fresas</p>
+							Adornos
+							<form>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckFresasEstrella">
+								<label class="form-check-label" for="flexCheckFresasEstrella">
+									Estrella $500/u
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckFresasMensaje">
+								<label class="form-check-label" for="flexCheckFresasMensaje">
+									Mensaje personalizado $50/letra
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckFresasImagen">
+								<label class="form-check-label" for="flexCheckFresasImagen">
+									Imagen $10.000/letra
+								</label>
+							</div>
+							</form>
+							<a href="#" class="btn btn-primary">Comprar</a>
+						</div>						
+					</div>
+                    </div>
+					<div class="col-lg-4 mb-2  d-flex align-items-stretch">
+                        <div class="card">
+						<img class="card-img-top" src="images/tortas/pascua.jpg">
+						<div class="card-body">
+							<h5 class="card-title">Torta de Pascua</h5>
+							<p class="card-text">Prueba nuestra deliciosa torta de pascua</p>
+							Adornos
+							<form>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckPascuaEstrella">
+								<label class="form-check-label" for="flexCheckPascuaEstrella">
+									Estrella $500/u
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckPascuaMensaje">
+								<label class="form-check-label" for="flexCheckPascuaMensaje">
+									Mensaje personalizado $50/letra
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckPascuaImagen">
+								<label class="form-check-label" for="flexCheckPascuaImagen">
+									Imagen $10.000/letra
+								</label>
+							</div>
+							</form>
+							<a href="#" class="btn btn-primary">Comprar</a>
+						</div>						
+					</div>
+                    </div>
+					<div class="col-lg-4 mb-2  d-flex align-items-stretch">
+                       <div class="card">
+						<img class="card-img-top" src="images/tortas/queso.jpg">
+						<div class="card-body">
+							<h5 class="card-title">Torta de Queso</h5>
+							<p class="card-text">Prueba nuestra deliciosa torta de queso</p>
+							Adornos
+							<form>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckQuesoEstrella">
+								<label class="form-check-label" for="flexCheckQuesoEstrella">
+									Estrellas $500/u
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckQuesoMensaje">
+								<label class="form-check-label" for="flexCheckQuesoMensaje">
+									Mensaje personalizado $50/letra
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckQuesoImagen">
+								<label class="form-check-label" for="flexCheckQuesoImagen">
+									Imagen $10.000/letra
+								</label>
+							</div>
+							</form>
+							<a href="#" class="btn btn-primary">Comprar</a>
+						</div>						
+					</div> 
+                    </div>
+					<div class="col-lg-4 mb-2  d-flex align-items-stretch">
+                        <div class="card">
+						<img class="card-img-top" src="images/tortas/zanahoria.jpg">
+						<div class="card-body">
+							<h5 class="card-title">Torta de Zanahoria</h5>
+							<p class="card-text">Prueba nuestra deliciosa torta de zanahoria</p>
+							Adornos
+							<form>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckZanahoriaEstrella">
+								<label class="form-check-label" for="flexCheckZanahoriaEstrella">
+									Estrella $500/u
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckZanahoriaMensaje">
+								<label class="form-check-label" for="flexCheckZanahoriaMensaje">
+									Mensaje personalizado $50/letra
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckZanahoriaImagen">
+								<label class="form-check-label" for="flexCheckZanahoriaImagen">
+									Imagen $10.000/letra
+								</label>
+							</div>
+							</form>
+							<a href="#" class="btn btn-primary">Comprar</a>
+						</div>						
+					</div>
+                    </div>
+					<div class="col-lg-4 mb-2  d-flex align-items-stretch">
+                        <div class="card">
+						<img class="card-img-top" src="images/tortas/manzana.jpg">
+						<div class="card-body">
+							<h5 class="card-title">Torta de Manzana</h5>
+							<p class="card-text">Prueba nuestra deliciosa torta de manzana</p>
+							Adornos
+							<form>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckManzanaEstrella">
+								<label class="form-check-label" for="flexCheckManzanaEstrella">
+									Estrella $500/u
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckManzanaMensaje">
+								<label class="form-check-label" for="flexCheckManzanaMensaje">
+									Mensaje personalizado $50/letra
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckManzanaImagen">
+								<label class="form-check-label" for="flexCheckManzanaImagen">
+									Imagen $10.000/letra
+								</label>
+							</div>
+							</form>
+							<a href="#" class="btn btn-primary">Comprar</a>
+						</div>						
+					</div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+    </main>
+
+    <!-- Footer-->
+    <footer class="footer py-2">
+        <div class="container">
+			<div class="row text-light">
+			<div class="col-lg-4">
+				<p>Dirección: Calle 102 # 50-72
+				<br/>Barrio: Barrios Unidos
+				<br/>Ciudad: Bogotá - Colombia</p>
+				</div>
+				<div class="col-lg-4">
+				Horarios de Atención:<br/> Lun-Sáb 8:00 a.m. - 6 p.m.
+				</div>
+				<div class="col-lg-4">
+				Teléfonos: 601 6352984<br/>
+				Celular: 350 2365864</div>
+			</div>
+            <p class="text-center text-light">&copy; 2022 gfrodriguez</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+
+</body>
+
 </html>
