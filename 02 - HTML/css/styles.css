@@ -1,0 +1,24 @@
+.navbar {
+    background-color: #6E5436;
+}
+
+.navbar-toggler {
+    background-color: #4C3F2C !important;
+}
+
+main section .btn {
+    background-color: #0696A5 !important;
+}
+
+.masthead {
+    height: 20vh;
+    min-height: 150px;
+    background-image: url('https://images.unsplash.com/photo-1621857426350-ddab819cf0cc');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.footer {
+    background-color: #4C3F2C !important;
+}

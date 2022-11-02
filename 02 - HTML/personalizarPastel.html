@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <title>Les Petits Douces</title>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.2/js/all.js" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body id="page-top" class="d-flex flex-column h-100">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand link-light" href="/02 - HTML/"><img alt="logo" src="images/logo.png" height="40"> Les Petits Douces</a>
+            <button class="navbar-toggler font-weight-bold text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menú
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-1 px-0 px-lg-3 rounded link-light" href="#Pasteles">Pasteles</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-1 px-0 px-lg-3 rounded link-light" href="#personalizar">Personalizar Pastel</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="bg-secondary d-flex align-items-center masthead text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Les Petits Douces</h1>
+                    <p>Dulces placeres para toda la familia</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main" class="mt-2">
+        <!-- Personalización Section-->
+        <section class="page-section " id="personalizar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 mb-2">
+                        <form action="clienteCompra.html" method="post">
+                            <div class="select">
+                                <label id="pastel_label" for="pastel"><h2>¿Cuál es su pastel preferido?</h2></label>
+                                <div class="input-group mb-3">
+                                    <select id="pastel" name="pastel" class="form-select" aria-label="">
+                                        <option>Torta de Chocolate</option>
+                                        <option>Torta de Fresas</option>
+                                        <option>Torta de Pascua</option>
+                                        <option>Torta de Queso</option>
+                                        <option>Torta de Zanahoria</option>
+                                        <option>Torta de Manzana</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <label>¿Desea combinar su pastel?</label>
+                            <div class="form-check mb-3">
+                                <input id="otroPastel" name="otroPastel" type="radio" class="form-check-input" value="Si" />
+                                <label id="otroPastel_label" class="form-check-label" for="otroPastel">Si</label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input id="otroPastel" name="otroPastel" type="radio" class="form-check-input" value="No" />
+                                <label id="otroPastel_label" class="form-check-label" for="otroPastel">No</label>
+                            </div>
+                            <div class="select">
+                                <label id="segundaOpción_label" for="segundaOpción"><h2>¿Con qué pastel desea combinar el pastel?</h2></label>
+                                <div class="input-group mb-3">
+                                    <select id="segundaOpción" name="segundaOpción" class="form-control form-select" aria-label="">
+                                        <option>Torta de Chocolate</option>
+                                        <option>Torta de Fresas</option>
+                                        <option>Torta de Pascua</option>
+                                        <option>Torta de Queso</option>
+                                        <option>Torta de Zanahoria</option>
+                                        <option>Torta de Manzana</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer-->
+    <footer class="footer py-2">
+        <div class="container">
+            <div class="row text-light">
+                <div class="col-lg-4">
+                    <p>Dirección: Calle 102 # 50-72
+                        <br />Barrio: Barrios Unidos
+                        <br />Ciudad: Bogotá - Colombia
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    Horarios de Atención:<br /> Lun-Sáb 8:00 a.m. - 6 p.m.
+                </div>
+                <div class="col-lg-4">
+                    Teléfonos: 601 6352984<br />
+                    Celular: 350 2365864</div>
+            </div>
+            <p class="text-center text-light">&copy; 2022 gfrodriguez</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
