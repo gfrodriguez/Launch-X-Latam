@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-1 px-0 px-lg-3 rounded link-light" href="#Pasteles">Pasteles</a>
+                        <a class="nav-link py-1 px-0 px-lg-3 rounded link-light" href="index.html">Pasteles</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-1 px-0 px-lg-3 rounded link-light" href="#personalizar">Personalizar Pastel</a>
@@ -51,43 +51,71 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 mb-2">
-                        <form action="clienteCompra.html" method="post">
+                        <form>
                             <div class="select">
                                 <label id="pastel_label" for="pastel"><h2>¿Cuál es su pastel preferido?</h2></label>
                                 <div class="input-group mb-3">
                                     <select id="pastel" name="pastel" class="form-select" aria-label="">
-                                        <option>Torta de Chocolate</option>
-                                        <option>Torta de Fresas</option>
-                                        <option>Torta de Pascua</option>
-                                        <option>Torta de Queso</option>
-                                        <option>Torta de Zanahoria</option>
-                                        <option>Torta de Manzana</option>
+                                        <option value="1">Torta de Chocolate</option>
+                                        <option value="2">Torta de Fresas</option>
+                                        <option value="3">Torta de Pascua</option>
+                                        <option value="4">Torta de Queso</option>
+                                        <option value="5">Torta de Zanahoria</option>
+                                        <option value="6">Torta de Manzana</option>
                                     </select>
                                 </div>
                             </div>
                             <label>¿Desea combinar su pastel?</label>
                             <div class="form-check mb-3">
-                                <input id="otroPastel" name="otroPastel" type="radio" class="form-check-input" value="Si" />
-                                <label id="otroPastel_label" class="form-check-label" for="otroPastel">Si</label>
+                                <input name="otroPastel" type="radio" class="form-check-input" value="Si" />
+                                <label  class="form-check-label" for="otroPastel">Si</label>
                             </div>
                             <div class="form-check mb-3">
-                                <input id="otroPastel" name="otroPastel" type="radio" class="form-check-input" value="No" />
-                                <label id="otroPastel_label" class="form-check-label" for="otroPastel">No</label>
+                                <input name="otroPastel" type="radio" class="form-check-input" value="No" />
+                                <label class="form-check-label" for="otroPastel">No</label>
                             </div>
                             <div class="select">
                                 <label id="segundaOpción_label" for="segundaOpción"><h2>¿Con qué pastel desea combinar el pastel?</h2></label>
                                 <div class="input-group mb-3">
                                     <select id="segundaOpción" name="segundaOpción" class="form-control form-select" aria-label="">
-                                        <option>Torta de Chocolate</option>
-                                        <option>Torta de Fresas</option>
-                                        <option>Torta de Pascua</option>
-                                        <option>Torta de Queso</option>
-                                        <option>Torta de Zanahoria</option>
-                                        <option>Torta de Manzana</option>
+                                        <option value="1">Torta de Chocolate</option>
+                                        <option value="2">Torta de Fresas</option>
+                                        <option value="3">Torta de Pascua</option>
+                                        <option value="4">Torta de Queso</option>
+                                        <option value="5">Torta de Zanahoria</option>
+                                        <option value="6">Torta de Manzana</option>
                                     </select>
                                 </div>
                             </div>
-
+							<div class="select">
+                                <label id="adornos_label" for="adornos"><h2>¿Qué adornos prefiere?</h2></label>
+                                <div class="input-group mb-3">
+                                    <select id="adornos" name="adornos" class="form-control form-select" aria-label="">
+                                        <option value="1">Mensaje Personalizado - $50 c/letra</option>
+                                        <option value="2">Chispas de chocolate $1.000/gramo</option>
+                                        <option value="3">Imagen</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label id="mensajePersonalizado_label" for="mensajePersonalizado">Redacte su mensaje personalizado</label>
+                                <input id="mensajePersonalizado" name="mensajePersonalizado" type="text" class="form-control" />
+                            </div>
+                            <div class="mb-3">
+                                <label id="chispas_label" for="chispas">¿Cuántos gramos de chispas desea?</label>
+                                <input id="chispas" name="chispas" type="number" class="form-control" />
+                            </div>
+                            <div class="file-upload">
+                                <label for="file_upload">Adjunte la imagen que desea en su pastel</label>
+                                <div class="custom-file">
+                                    <div class="input-group mb-3">
+                                        <input id="file_upload" name="file_upload" type="file" class="custom-file-input form-control" aria-label="File Upload" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-primary" type="submit">Enviar</button>
+                            </div>
                         </form>
                     </div>
                 </div>
