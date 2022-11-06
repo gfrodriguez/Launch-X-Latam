@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+body {
+margin: auto;
+}
+/*main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: normal;
+    align-content: normal;
+}*/
+
+#pokeName{
+    text-transform: capitalize;
+}
+
+.pokedexLeft{
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    width: 50vw;
+    height: 48vh;
+    min-height: 400px;
+    background-color: #CE1131;
+}
+
+.pokeImage {
+    display: block;
+    width: 90%;
+    border: 20px solid grey;
+    border-radius: 10% 10% 10% 30%;
+    margin: 2%;
+    background-color: whitesmoke;
+}
+
+.pokedexRight{
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    width: 50vw;
+    height: 48vh;
+    min-height: 400px;
+    background-color: #CD1130;
+}
