@@ -22,3 +22,11 @@ main section .btn {
 .footer {
     background-color: #4C3F2C !important;
 }
+
+#flotante{
+	position: fixed;
+    width: 190px;
+	top: 50%;
+	right: 10%;
+    z-index: 1000;
+}
