@@ -29,13 +29,26 @@ margin: auto;
     background-color: #CE1131;
 }
 
+.screen{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.number-name{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .pokeImage {
     display: block;
-    width: 90%;
-    border: 20px solid grey;
+    /*width: 96%;*/
+    border: 20px solid #DEDEDE;
     border-radius: 10% 10% 10% 30%;
     margin: 2%;
-    background-color: whitesmoke;
+    background-color: #F1F2D3;
+    box-shadow: -6px 6px 0px 3px #6a6a72;
 }
 
 .pokedexRight{
@@ -48,5 +61,5 @@ margin: auto;
     width: 50vw;
     height: 48vh;
     min-height: 400px;
-    background-color: #CD1130;
+    background-color: #BD0F34;
 }

@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,
+                       initial-scale=1" />
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <title>Pokédex</title>
@@ -16,30 +18,34 @@
     <main>
         <div class="container-fluid">
             <div class="row d-flex justify-content-center">
-                <div class="col-lg-4 bg-danger">
-                    <img class="pokeImage img-fluid" id="pokeImage" src="images/null.png" width="332" height="332" />
-                    <h1 id="pokeName" class="text-center"></h1>
-                    <h2 id="pokeId" class="text-center"></h2>
-                    <h5 id="pokeDescription"></h5>
+                <div class="col-lg-4 bg-danger text-center">
+                    <div class="screen">
+                        <img class="pokeImage img-fluid" id="pokeImage" src="images/null.png" width="332" height="332" />
+                        <div class="number-name fw-bolder"><span id="pokeId"></span><span id="pokeName"></span></div>
+                    </div>
+                    
                 </div>
                 <div class="col-lg-4 bg-danger">
-                    
+
                     <!--<div class="col-lg-12 bg-info"> 
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                     </div>-->
+                    <div class="row mt-2">
+                        <h5 class="text-light" id="pokeDescription"></h5>
+                    </div>
+                    
                     <div class="container mt-3 mb-3">
                         <div class="pokeDetails bg-info row rounded" id="pokeDetails" style="min-height: 200px;">
-                            <div class="col-lg-6">
-                                <span>Altura</span> <span id="pokeHeight"></span>
-                                <span>Peso</span> <span id="pokeWeight"></span>
-                            </div>                             
+                            <div class="col-6"><span class="fw-bold">Altura: </span><span id="pokeHeight"></span></div>
+                            <div class="col-6"><span class="fw-bold">Peso: </span><span id="pokeWeight"></span></div>
+                            <div class="col-6"><span class="fw-bold">Género: </span><span id="pokeGenus"></span></div>
                         </div>
                     </div>
 
-                    
-                    
+
+
                     <div class="alert alert-warning alert-dismissible fade show d-none" id="alertNull" role="alert">
                         <strong>Upps!</strong> Debería buscar un Pokémon por nombre o número.
                     </div>
