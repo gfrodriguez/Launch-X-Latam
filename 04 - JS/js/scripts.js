@@ -33,6 +33,10 @@ const callPokeAPI = async () => {
                 break
             }
         }
+        pokeInfo.abilities="";
+            for (let i of dataPoke.abilities){
+                pokeInfo.abilities+=i.ability.name+", ";
+            }
           console.log(dataPoke);
           console.log(dataPokeEspecies);
       } catch (e) {
@@ -62,6 +66,7 @@ const callPokeAPI = async () => {
   pokeHeight.innerText = pokeInfo.height+' cm';
   pokeWeight.innerText = pokeInfo.weight+' Kg';
   pokeGenus.innerText = pokeInfo.genus;
+  pokeAbilities.innerText = pokeInfo.abilities;
 }
 
 buttonPokeSearch.addEventListener('click', callPokeAPI);
