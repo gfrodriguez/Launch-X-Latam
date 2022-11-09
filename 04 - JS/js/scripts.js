@@ -17,8 +17,8 @@ const callPokeAPI = async () => {
           const dataPoke = await resPoke.json();
           const dataPokeEspecies = await resPokeEspecies.json();          
           pokeInfo.id = dataPoke.id;
-          pokeInfo.name = dataPoke.name;
-          pokeInfo.image = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + (pokeInfo.id > 99 ? pokeInfo.id  : pokeInfo.id > 10 ? "0" + pokeInfo.id : "00" + pokeInfo.id) + ".png";
+          pokeInfo.name = dataPoke.name;          
+          pokeInfo.image = dataPoke.sprites.other['official-artwork'].front_default;
           pokeInfo.height = dataPoke.height*10;
           pokeInfo.weight = dataPoke.weight/10;
           for (let i of dataPokeEspecies.flavor_text_entries) {
