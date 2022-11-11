@@ -2,6 +2,7 @@
 
 body {
 margin: auto;
+color: var(--bs-black);
 }
 /*main{
     display: flex;

@@ -77,6 +77,8 @@ const callPokeAPI = async () => {
             pokeInfo.description = "";
             pokeInfo.genus = "";
             pokeInfo.types ="";
+			pokeInfo.abilities = {};
+			pokeInfo.types = {};
         }
     } else {
         alertNull.classList.remove("d-none");
@@ -88,6 +90,8 @@ const callPokeAPI = async () => {
         pokeInfo.description = "";
         pokeInfo.genus = "";
         pokeInfo.types ="";
+		pokeInfo.abilities = {};
+		pokeInfo.types = {};
     }
     pokeDescription.innerText = pokeInfo.description;
     pokeName.innerText = "-" + pokeInfo.name;
