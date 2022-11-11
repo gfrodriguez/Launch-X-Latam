@@ -49,6 +49,21 @@ const callPokeAPI = async () => {
                 }
                 j++;
             }
+            pokeInfo.types = new Object();
+            j = 0;
+            for (let i of dataPoke.types) {
+                const resPokeTypes = await fetch(
+                    "https://pokeapi.co/api/v2/type/" + i.type.name
+                );
+                const dataPokeTypes = await resPokeTypes.json();
+                for (let k of dataPokeTypes.names) {
+                    if (k.language.name == "es") {
+                        pokeInfo.types[j] = k.name;
+                        break;
+                    }
+                }
+                j++;
+            }
             console.log(dataPoke);
             console.log(dataPokeEspecies);
             console.log(pokeInfo);
@@ -61,6 +76,7 @@ const callPokeAPI = async () => {
             pokeInfo.weight = "";
             pokeInfo.description = "";
             pokeInfo.genus = "";
+            pokeInfo.types ="";
         }
     } else {
         alertNull.classList.remove("d-none");
@@ -71,6 +87,7 @@ const callPokeAPI = async () => {
         pokeInfo.weight = "";
         pokeInfo.description = "";
         pokeInfo.genus = "";
+        pokeInfo.types ="";
     }
     pokeDescription.innerText = pokeInfo.description;
     pokeName.innerText = "-" + pokeInfo.name;
@@ -81,6 +98,7 @@ const callPokeAPI = async () => {
     pokeWeight.innerText = pokeInfo.weight + " Kg";
     pokeGenus.innerText = pokeInfo.genus;
     pokeAbilities.innerText = Object.values(pokeInfo.abilities).join(', ');
+    pokeTypes.innerText = Object.values(pokeInfo.types).join(', ');
 };
 
 buttonPokeSearch.addEventListener("click", callPokeAPI);
