@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="Title" content="Pokédex a partir de pokéapi.co" />
     <meta name="Author" content="gfrodriguez" />
     <meta name="Subject" content="pokémon" />
-    <meta name="Description" content="Es una Pokédex que hace uso de la API pokéAPI"/>
+    <meta name="Description" content="Es una Pokédex que hace uso de la API pokéAPI" />
     <meta name="Keywords" content="pokéAPI, API, pokémon" />
     <meta name="Language" content="Spanish" />
     <meta name="Revisit-After" content="1 day" />
@@ -16,117 +17,75 @@
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <title>Pokédex</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
     <link href="css/pokedex.css" rel="stylesheet" />
-  </head>
+</head>
 
-  <body>
+<body>
     <main>
-      <div class="container-fluid">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-4 bg-danger text-center">
-            <div class="screen">
-              <img
-                class="pokeImage img-fluid"
-                id="pokeImage"
-                src="images/null.png"
-                width="332"
-                height="332"
-                alt="null"
-              />
-              <div class="number-name fw-bolder">
-                <span id="pokeId"></span><span id="pokeName"></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 bg-danger">
-            <div class="row mt-2">
-              <h5 class="text-light" id="pokeDescription"></h5>
-            </div>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 bg-danger text-center">
+                    <div class="screen">
+                        <img class="pokeImage img-fluid" id="pokeImage" src="images/null.png" width="332" height="332" alt="null" />
+                        <div class="number-name fw-bolder">
+                            <span id="pokeId"></span><span id="pokeName"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 bg-danger">
+                    <div class="container">
+                        <div class="row mt-2 bg-dark bg-gradient rounded">
+                            <div class="col-12 mt-3" style="min-height: 100px"><h5 class="text-light" id="pokeDescription"></h5></div>
+                        </div>
+                    </div>
+                    <div class="container mt-3 mb-3">
+                        <div class="pokeDetails bg-info row rounded" id="pokeDetails" style="min-height: 150px">
+                            <div class="col-6 mt-2">
+                                <span class="fw-bold">Altura: </span><span id="pokeHeight"></span>
+                            </div>
+                            <div class="col-6 mt-2">
+                                <span class="fw-bold">Peso: </span><span id="pokeWeight"></span>
+                            </div>
+                            <div class="col-6">
+                                <span class="fw-bold">Género: </span><span id="pokeGenus"></span>
+                            </div>
+                            <div class="col-6">
+                                <span class="fw-bold">Habilidad: </span><span id="pokeAbilities"></span>
+                            </div>
+                            <!--<div class="col-6"><span class="fw-bold">Debilidad: </span><span id="pokeWeakness"></span></div>-->
+                        </div>
 
-            <div class="container mt-3 mb-3">
-              <div
-                class="pokeDetails bg-info row rounded"
-                id="pokeDetails"
-                style="min-height: 150px"
-              >
-                <div class="col-6">
-                  <span class="fw-bold">Altura: </span
-                  ><span id="pokeHeight"></span>
-                </div>
-                <div class="col-6">
-                  <span class="fw-bold">Peso: </span
-                  ><span id="pokeWeight"></span>
-                </div>
-                <div class="col-6">
-                  <span class="fw-bold">Género: </span
-                  ><span id="pokeGenus"></span>
-                </div>
-                <div class="col-6">
-                  <span class="fw-bold">Habilidad: </span
-                  ><span id="pokeAbilities"></span>
-                </div>
-                <!--<div class="col-6"><span class="fw-bold">Debilidad: </span><span id="pokeWeakness"></span></div>-->
-              </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <span class="fw-bold">Tipo: </span><span id="pokeTypes"></span>
+                            </div>
+                        </div>        
+                    </div>
 
-              <div class="row mt-3">
-                <div class="col-12">
-                  <span class="fw-bold">Tipo: </span
-                  ><span id="pokeTypes"></span>
+                    <div class="alert alert-warning alert-dismissible fade show d-none" id="alertNull" role="alert">
+                        <strong>Upps!</strong> Debería buscar un Pokémon por nombre o
+                        número.
+                    </div>
+                    <div class="alert alert-warning alert-dismissible fade show d-none" id="alertThatPokeDoesNotExist" role="alert">
+                        <strong>Upps!</strong> Ese pokémon no existe :(.
+                    </div>
                 </div>
-              </div>
-            </div>
 
-            <div
-              class="alert alert-warning alert-dismissible fade show d-none"
-              id="alertNull"
-              role="alert"
-            >
-              <strong>Upps!</strong> Debería buscar un Pokémon por nombre o
-              número.
+                <div class="col-lg-8 bg-danger">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="pokeSearch" required aria-label="Search" />
+                        <button class="btn btn-primary" type="submit" id="buttonPokeSearch" aria-pressed="true">
+                            Buscar
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div
-              class="alert alert-warning alert-dismissible fade show d-none"
-              id="alertThatPokeDoesNotExist"
-              role="alert"
-            >
-              <strong>Upps!</strong> Ese pokémon no existe :(.
-            </div>
-          </div>
-
-          <div class="col-lg-8 bg-danger">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="pokeSearch"
-                required
-                aria-label="Search"
-              />
-              <button
-                class="btn btn-primary"
-                type="submit"
-                id="buttonPokeSearch"
-                aria-pressed="true"
-              >
-                Buscar
-              </button>
-            </div>
-          </div>
         </div>
-      </div>
     </main>
     <script src="js/scripts.js"></script>
     <!-- JavaScript Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+
 </html>
