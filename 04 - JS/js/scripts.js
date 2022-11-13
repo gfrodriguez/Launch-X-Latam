@@ -48,7 +48,7 @@ const callPokeAPI = async () => {
                     }
                 }
                 j++;
-            }
+            }            
             pokeInfo.types = new Object();
             j = 0;
             for (let i of dataPoke.types) {
@@ -63,6 +63,22 @@ const callPokeAPI = async () => {
                     }
                 }
                 j++;
+            }
+            pokeInfo.weakness = new Object(2);
+            j = 0;
+            let l = 0;
+            for (let i of dataPoke.types) {
+                const resPokeWeakness = await fetch(
+                    "https://pokeapi.co/api/v2/type/" + i.type.name
+                );
+          
+                const dataPokeWeakness = await resPokeWeakness.json();
+                for (let k of dataPokeWeakness.damage_relations.double_damage_from) {
+                        pokeInfo.weakness[l] = k.name;
+                        l++;
+                    }
+                j++;
+
             }
             console.log(dataPoke);
             console.log(dataPokeEspecies);
@@ -79,6 +95,7 @@ const callPokeAPI = async () => {
             pokeInfo.types ="";
 			pokeInfo.abilities = {};
 			pokeInfo.types = {};
+            pokeInfo.weakness={};
         }
     } else {
         alertNull.classList.remove("d-none");
@@ -92,6 +109,7 @@ const callPokeAPI = async () => {
         pokeInfo.types ="";
 		pokeInfo.abilities = {};
 		pokeInfo.types = {};
+        pokeInfo.weakness={};
     }
     pokeDescription.innerText = pokeInfo.description;
     pokeName.innerText = "-" + pokeInfo.name;
@@ -103,6 +121,7 @@ const callPokeAPI = async () => {
     pokeGenus.innerText = pokeInfo.genus;
     pokeAbilities.innerText = Object.values(pokeInfo.abilities).join(', ');
     pokeTypes.innerText = Object.values(pokeInfo.types).join(', ');
+    pokeWeakness.innerText = Object.values(pokeInfo.weakness).join(', ');
 };
 
 buttonPokeSearch.addEventListener("click", callPokeAPI);
