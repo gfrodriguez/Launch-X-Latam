@@ -21,7 +21,7 @@ const callPokeAPI = async () => {
             pokeInfo.name = dataPoke.name;
             pokeInfo.image = dataPoke.sprites.other["official-artwork"].front_default;
             pokeInfo.height = dataPoke.height * 10;
-            pokeInfo.weight = dataPoke.weight / 10;
+            pokeInfo.weight = dataPoke.weight;
             for (let i of dataPokeEspecies.flavor_text_entries) {
                 if (i.language.name == "es") {
                     pokeInfo.description = i.flavor_text.replace(/\n/g, " ");
@@ -34,7 +34,7 @@ const callPokeAPI = async () => {
                     break;
                 }
             }
-            pokeInfo.abilities = new Object();
+            pokeInfo.abilities = {};
             let j = 0;
             for (let i of dataPoke.abilities) {
                 const resPokeAbilities = await fetch(
@@ -49,37 +49,47 @@ const callPokeAPI = async () => {
                 }
                 j++;
             }            
-            pokeInfo.types = new Object();
+            pokeInfo.types = {};
             j = 0;
             for (let i of dataPoke.types) {
-                const resPokeTypes = await fetch(
-                    "https://pokeapi.co/api/v2/type/" + i.type.name
-                );
-                const dataPokeTypes = await resPokeTypes.json();
-                for (let k of dataPokeTypes.names) {
-                    if (k.language.name == "es") {
-                        pokeInfo.types[j] = k.name;
-                        break;
-                    }
-                }
+                pokeInfo.types[j] = i.type.name;
                 j++;
             }
-            pokeInfo.weakness = new Object(2);
+
+            async function translateTypes(obj){
+                j = 0;
+                let types = new Object();
+                for (let i of Object.keys(obj)) {
+                    const resPokeTypes = await fetch(
+                        "https://pokeapi.co/api/v2/type/"+obj[i]
+                    );
+                    const dataPokeTypes = await resPokeTypes.json();
+                    for (let k of dataPokeTypes.names) {
+                        if (k.language.name == "es") {
+                            types[j] = k.name;
+                            break;
+                        }
+                    }
+                    j++;
+                }
+                return types;
+            }          
+            pokeInfo.weakness = {};
             j = 0;
             let l = 0;
             for (let i of dataPoke.types) {
                 const resPokeWeakness = await fetch(
                     "https://pokeapi.co/api/v2/type/" + i.type.name
-                );
-          
+                );          
                 const dataPokeWeakness = await resPokeWeakness.json();
                 for (let k of dataPokeWeakness.damage_relations.double_damage_from) {
                         pokeInfo.weakness[l] = k.name;
                         l++;
                     }
                 j++;
-
             }
+            pokeInfo.types= await translateTypes(pokeInfo.types);
+            pokeInfo.weakness= await translateTypes(pokeInfo.weakness);
             console.log(dataPoke);
             console.log(dataPokeEspecies);
             console.log(pokeInfo);
@@ -116,7 +126,7 @@ const callPokeAPI = async () => {
     pokeImage.src = pokeInfo.image;
     pokeImage.alt = pokeInfo.name;
     pokeId.innerText = "#" + pokeInfo.id;
-    pokeHeight.innerText = pokeInfo.height + " cm";
+    pokeHeight.innerText = pokeInfo.height + " m";
     pokeWeight.innerText = pokeInfo.weight + " Kg";
     pokeGenus.innerText = pokeInfo.genus;
     pokeAbilities.innerText = Object.values(pokeInfo.abilities).join(', ');
