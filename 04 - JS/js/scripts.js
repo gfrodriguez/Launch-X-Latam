@@ -58,7 +58,7 @@ const callPokeAPI = async () => {
 
             async function translateTypes(obj){
                 j = 0;
-                let types = new Object();
+                let types = {};
                 for (let i of Object.keys(obj)) {
                     const resPokeTypes = await fetch(
                         "https://pokeapi.co/api/v2/type/"+obj[i]
@@ -75,7 +75,6 @@ const callPokeAPI = async () => {
                 return types;
             }          
             pokeInfo.weakness = {};
-            j = 0;
             let l = 0;
             for (let i of dataPoke.types) {
                 const resPokeWeakness = await fetch(
@@ -86,7 +85,6 @@ const callPokeAPI = async () => {
                         pokeInfo.weakness[l] = k.name;
                         l++;
                     }
-                j++;
             }
             pokeInfo.types= await translateTypes(pokeInfo.types);
             pokeInfo.weakness= await translateTypes(pokeInfo.weakness);
