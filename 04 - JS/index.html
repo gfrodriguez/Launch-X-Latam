@@ -24,6 +24,7 @@
 <body>
     <main>
         <div class="container-fluid">
+
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-4 bg-danger text-center">
                     <div class="screen">
@@ -32,13 +33,17 @@
                             <span id="pokeId"></span><span id="pokeName"></span>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 bg-danger">
                     <div class="container">
-                        <div class="row mt-2 bg-dark bg-gradient rounded">
-                            <div class="col-12 mt-3" style="min-height: 100px"><h5 class="text-light" id="pokeDescription"></h5></div>
+                        <div class="row mt-2 mb-2 bg-dark bg-gradient rounded">
+                            <div class="col-12 mt-2 mb-2" style="min-height: 80px">
+                                <h5 class="text-light" id="pokeDescription"></h5>
+                            </div>
                         </div>
                     </div>
+
+                </div>
+                <div class="col-lg-4 bg-danger">
+
                     <div class="container mt-3 mb-3">
                         <div class="pokeDetails bg-info row rounded" id="pokeDetails" style="min-height: 150px">
                             <div class="col-6 mt-2">
@@ -60,13 +65,65 @@
                                 <span class="fw-bold">Tipo: </span><span id="pokeTypes"></span>
                             </div>
                         </div>
-
-                        <div class="row mt-3">
-                            <div class="col-12">
-                                
-                            </div>
-                        </div>        
                     </div>
+
+                    <div class="container bg-secondary py-2 rounded" style="min-height: 100px">
+                        <p class="fw-bold text-center">Características de base</p>
+                        <div class="row">
+                            <div class="col-4"><span class="fw-lighter">PS</span></div>
+                            <div class="col-8 m-auto">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" id="pokeStatHP" aria-label="PS" style="width: 0%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4"><span class="fw-lighter">Ataque</span></div>
+                            <div class="col-8 m-auto">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" id="pokeStatAttack" aria-label="PS" style="width: 0%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4"><span class="fw-lighter">Defensa</span></div>
+                            <div class="col-8 m-auto">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" id="pokeStatDefense" aria-label="PS" style="width: 0%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4"><span class="fw-lighter">Ataque Especial</span></div>
+                            <div class="col-8 m-auto">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" id="pokeStatSpecialAttack" aria-label="PS" style="width: 0%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4"><span class="fw-lighter">Defensa Especial</span></div>
+                            <div class="col-8 m-auto">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" id="pokeStatSpecialDefense" aria-label="PS" style="width: 0%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4"><span class="fw-lighter">Velocidad</span></div>
+                            <div class="col-8 m-auto">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" id="pokeStatSpeed" aria-label="PS" style="width: 0%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3 mt-3">
+                        <input type="text" class="form-control" id="pokeSearch" required aria-label="Search" />
+                        <button class="btn btn-primary" type="submit" id="buttonPokeSearch" aria-pressed="true">Buscar</button>
+                    </div>
+
 
                     <div class="alert alert-warning alert-dismissible fade show d-none" id="alertNull" role="alert">
                         <strong>Upps!</strong> Debería buscar un Pokémon por nombre o
@@ -76,13 +133,14 @@
                         <strong>Upps!</strong> Ese pokémon no existe :(.
                     </div>
                 </div>
+            </div>
 
-                <div class="col-lg-8 bg-danger">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="pokeSearch" required aria-label="Search" />
-                        <button class="btn btn-primary" type="submit" id="buttonPokeSearch" aria-pressed="true">
-                            Buscar
-                        </button>
+            <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+                <div class="modal-dialog modal-xl ">
+                    <div class="modal-content bg-danger">
+                        <div class="modal-body">
+
+                        </div>
                     </div>
                 </div>
             </div>
