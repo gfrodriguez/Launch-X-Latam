@@ -1,6 +1,7 @@
 const buttonPokeSearch = document.getElementById("buttonPokeSearch");
 const alertNull = document.getElementById("alertNull");
 const alertThatPokeDoesNotExist = document.getElementById("alertThatPokeDoesNotExist");
+const progressBar = document.querySelectorAll(".progress-bar");
 const pokeInfo=new Object();
 
 const callPokeAPI = async () => {
@@ -105,6 +106,11 @@ const callPokeAPI = async () => {
                 pokeInfo.stats[i.stat.name] = i.base_stat;
                 j++;
             }
+
+            for (let i of progressBar) {
+                i.classList.add('progress-bar-striped', 'progress-bar-animated');
+             }
+
             console.log(dataPoke);
             console.log(dataPokeEspecies);
             console.log(pokeInfo);
