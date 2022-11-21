@@ -2,7 +2,7 @@ const buttonPokeSearch = document.getElementById("buttonPokeSearch");
 const alertNull = document.getElementById("alertNull");
 const alertThatPokeDoesNotExist = document.getElementById("alertThatPokeDoesNotExist");
 const progressBar = document.querySelectorAll(".progress-bar");
-const pokeInfo=new Object();
+const pokeInfo={};
 
 const callPokeAPI = async () => {
     if (!pokeSearch.value == "") {
@@ -11,12 +11,12 @@ const callPokeAPI = async () => {
         try {
             const resPoke = await fetch(
                 "https://pokeapi.co/api/v2/pokemon/" + pokeSearch.value
-            );
-            const resPokeEspecies = await fetch(
-                "https://pokeapi.co/api/v2/pokemon-species/" + pokeSearch.value
-            );
+            );            
             alertThatPokeDoesNotExist.classList.add("d-none");
             const dataPoke = await resPoke.json();
+            const resPokeEspecies = await fetch(
+                "https://pokeapi.co/api/v2/pokemon-species/" + dataPoke.id
+            );
             const dataPokeEspecies = await resPokeEspecies.json();
             pokeInfo.id = dataPoke.id;
             pokeInfo.name = dataPoke.name;
@@ -27,6 +27,16 @@ const callPokeAPI = async () => {
                 if (i.language.name == "es") {
                     pokeInfo.description = i.flavor_text.replace(/\n/g, " ");
                     break;
+                }else {
+                    pokeInfo.description = dataPokeEspecies.flavor_text_entries[0].flavor_text.replace(/\n/g, " ");
+                }
+            }
+            for (let i of dataPokeEspecies.names) {
+                if (i.language.name == "es") {
+                    pokeInfo.name = i.name;
+                    break;
+                } else {
+                    pokeInfo.name = dataPokeEspecies.name;
                 }
             }
             for (let i of dataPokeEspecies.genera) {
@@ -131,6 +141,7 @@ const callPokeAPI = async () => {
             console.log(pokeInfo);
         }
     } else {
+        alertThatPokeDoesNotExist.classList.add("d-none");
         alertNull.classList.remove("d-none");
         pokeInfo.id = "";
         pokeInfo.name = "";
