@@ -117,9 +117,9 @@ const callPokeAPI = async () => {
                 j++;
             }
 
-            for (let i of progressBar) {
+            /*for (let i of progressBar) {
                 i.classList.add('progress-bar-striped', 'progress-bar-animated');
-             }
+            }*/
 
             console.log(dataPoke);
             console.log(dataPokeEspecies);
@@ -180,6 +180,12 @@ const callPokeAPI = async () => {
     pokeStatSpecialAttack.ariaValueNow = pokeInfo.stats["special-attack"];
     pokeStatSpecialDefense.ariaValueNow = pokeInfo.stats["special-defense"];
     pokeStatSpeed.ariaValueNow = pokeInfo.stats.speed;
+    pokeStatHP.innerText = pokeInfo.stats.hp;
+    pokeStatAttack.innerText = pokeInfo.stats.attack;
+    pokeStatDefense.innerText = pokeInfo.stats.defense;
+    pokeStatSpecialAttack.innerText = pokeInfo.stats["special-attack"];
+    pokeStatSpecialDefense.innerText = pokeInfo.stats["special-defense"];
+    pokeStatSpeed.innerText = pokeInfo.stats.speed;
 };
 
 buttonPokeSearch.addEventListener("click", callPokeAPI);

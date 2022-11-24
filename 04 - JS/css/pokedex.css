@@ -17,19 +17,6 @@ color: var(--bs-black);
     text-transform: capitalize;
 }
 
-.pokedexLeft{
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-    width: 50vw;
-    height: 48vh;
-    min-height: 400px;
-    background-color: #CE1131;
-}
-
 .screen{
     position: relative;
     display: inline-block;
@@ -37,7 +24,7 @@ color: var(--bs-black);
 }
 .number-name{
     position: absolute;
-    top: 90%;
+    top: 93%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -45,26 +32,35 @@ color: var(--bs-black);
 .pokeImage {
     display: block;
     /*width: 96%;*/
-    border: 20px solid #DEDEDE;
-    border-radius: 10% 10% 10% 30%;
+    border: 10px solid #DEDEDE;
+    border-radius: 10% 10% 10% 10%;
     margin: 2%;
     background-color: #F1F2D3;
     box-shadow: -6px 6px 0px 3px #6a6a72;
 }
 
-.pokedexRight{
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-    width: 50vw;
-    height: 48vh;
-    min-height: 400px;
-    background-color: #BD0F34;
+.progress{
+    height: 11px;
 }
 
-.progress{
-    height: 8px;
+#pokeStatHP{
+    background-color: #ff4343;
+}
+#pokeStatAttack {
+    background-color: #F67C33;
+}
+
+#pokeStatDefense {
+    background-color: #F4D640;
+}
+
+#pokeStatSpecialAttack{
+    background-color: #688EF3;
+}
+#pokeStatSpecialDefense {
+    background-color: #6FC347;
+}
+
+#pokeStatSpeed {
+    background-color: #DD6B84;
 }
