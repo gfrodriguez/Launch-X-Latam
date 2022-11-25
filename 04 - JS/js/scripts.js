@@ -1,16 +1,17 @@
 const buttonPokeSearch = document.getElementById("buttonPokeSearch");
+const buttonPokeSearchXS = document.getElementById("buttonPokeSearchXS");
 const alertNull = document.getElementById("alertNull");
 const alertThatPokeDoesNotExist = document.getElementById("alertThatPokeDoesNotExist");
 const progressBar = document.querySelectorAll(".progress-bar");
 const pokeInfo={};
 
-const callPokeAPI = async () => {
-    if (!pokeSearch.value == "") {
-        pokeSearch.value = pokeSearch.value.toLowerCase();
+const callPokeAPI = e => async () => {
+    if (!e.value == "") {
+        e.value = e.value.toLowerCase();
         alertNull.classList.add("d-none");
         try {
             const resPoke = await fetch(
-                "https://pokeapi.co/api/v2/pokemon/" + pokeSearch.value
+                "https://pokeapi.co/api/v2/pokemon/" + e.value
             );            
             alertThatPokeDoesNotExist.classList.add("d-none");
             const dataPoke = await resPoke.json();
@@ -188,4 +189,5 @@ const callPokeAPI = async () => {
     pokeStatSpeed.innerText = pokeInfo.stats.speed;
 };
 
-buttonPokeSearch.addEventListener("click", callPokeAPI);
+buttonPokeSearch.addEventListener("click", callPokeAPI(pokeSearch));
+buttonPokeSearchXS.addEventListener("click", callPokeAPI(pokeSearchXS));

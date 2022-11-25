@@ -33,14 +33,21 @@
                             <span id="pokeId"></span><span id="pokeName"></span>
                         </div>
                     </div>
+
+                    <div class="d-block d-sm-none">
+                        <div class="input-group mb-3 mt-3">
+                            <input type="text" class="form-control" id="pokeSearchXS" required aria-label="Search" />
+                            <button class="btn btn-primary" type="submit" id="buttonPokeSearchXS" aria-pressed="true">Buscar</button>
+                        </div>
+                    </div> 
+
                     <div class="container">
                         <div class="row mt-2 mb-2 bg-dark bg-gradient rounded">
                             <div class="col-12 mt-2 mb-2 d-flex align-items-center" style="min-height: 80px">
                                 <h5 class="text-light" id="pokeDescription"></h5>
                             </div>
                         </div>
-                    </div>
-
+                    </div>                  
                 </div>
                 <div class="col-lg-4 bg-danger rounded-end">
 
@@ -67,7 +74,7 @@
                         </div>
                     </div>
 
-                    <div class="container bg-dark text-light py-2 rounded" style="min-height: 100px">
+                    <div class="container bg-dark text-light py-2 mb-2 rounded" style="min-height: 100px">
                         <p class="fw-bold text-center">Estadísticas base</p>
                         <div class="row">
                             <div class="col-2"><span class="fw-lighter">Salud</span></div>
@@ -119,11 +126,12 @@
                         </div>
                     </div>
 
-                    <div class="input-group mb-3 mt-3">
-                        <input type="text" class="form-control" id="pokeSearch" required aria-label="Search" />
-                        <button class="btn btn-primary" type="submit" id="buttonPokeSearch" aria-pressed="true">Buscar</button>
-                    </div>
-
+                    <div class="d-none d-sm-block">
+                        <div class="input-group mb-3 mt-3">
+                            <input type="text" class="form-control" id="pokeSearch" required aria-label="Search" />
+                            <button class="btn btn-primary" type="submit" id="buttonPokeSearch" aria-pressed="true">Buscar</button>
+                        </div>
+                    </div> 
 
                     <div class="alert alert-warning alert-dismissible fade show d-none" id="alertNull" role="alert">
                         <strong>Upps!</strong> Debería buscar un Pokémon por nombre o
