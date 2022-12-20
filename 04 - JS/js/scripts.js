@@ -5,10 +5,15 @@ const alertThatPokeDoesNotExist = document.getElementById("alertThatPokeDoesNotE
 const progressBar = document.querySelectorAll(".progress-bar");
 const pokeInfo={};
 
+/**
+ * Toma la entrada del usuario y luego usa esa entrada para obtener datos de PokeAPI.
+ */
 const callPokeAPI = e => async () => {
     if (!e.value == "") {
+        /* Convirtiendo la entrada a minúsculas. */
         e.value = e.value.toLowerCase();
         alertNull.classList.add("d-none");
+        /* Obtener datos de una API y almacenarlos en un objeto. */
         try {
             const resPoke = await fetch(
                 "https://pokeapi.co/api/v2/pokemon/" + e.value
@@ -48,6 +53,7 @@ const callPokeAPI = e => async () => {
             }
             pokeInfo.abilities = {};
             let j = 0;
+            /* Obtener las habilidades de los pokemon y traducirlas al español. */
             for (let i of dataPoke.abilities) {
                 const resPokeAbilities = await fetch(
                     "https://pokeapi.co/api/v2/ability/" + i.ability.name
@@ -68,6 +74,14 @@ const callPokeAPI = e => async () => {
                 j++;
             }
 
+            /**
+             * Toma un objeto con los id de tipo como claves y los nombres de tipo como valores, y
+             * devuelve un objeto con los id de tipo como claves y los nombres de tipo en español como
+             * valores.
+             * </código>
+             * @param obj - el objeto que contiene los tipos de pokemon
+             * @returns Una matriz de objetos.
+             */
             async function translateTypes(obj){
                 j = 0;
                 let types = {};
@@ -158,6 +172,7 @@ const callPokeAPI = e => async () => {
         pokeInfo.stats={hp:0,attack:0,defense:0,'special-attack':0,'special-defense':0,speed:0};;
         console.log(pokeInfo);
     }
+    /* Actualización del HTML con los datos de la API. */
     pokeDescription.innerText = pokeInfo.description;
     pokeName.innerText = "-" + pokeInfo.name;
     pokeImage.src = pokeInfo.image;
