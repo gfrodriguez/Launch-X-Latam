@@ -6,6 +6,99 @@ const progressBar = document.querySelectorAll(".progress-bar");
 const pokeInfo={};
 
 /**
+ * Toma los nombres de los 905 Pokémon y los pone en una matriz.
+ * @returns Una serie de nombres de Pokémon.
+ */
+const pokenames = async () => {
+    pokeInfo.names = new Array();
+    for (let j = 1; j<905;j++){
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+j);
+        const json = await response.json();
+        pokeInfo.names.push(json.name);
+    }
+    return pokeInfo.names;
+}
+
+document.addEventListener("DOMContentLoaded",pokenames());
+
+/**
+ * Cuando el usuario escribe algo en el campo de entrada, la función busca el valor en la matriz y
+ * muestra los resultados en una lista desplegable.
+ * Codigo de W3Schools
+ * @param inp - El elemento de campo de texto.
+ * @param arr - La matriz de cadenas que se utilizará para la función de autocompletar.
+ * @returns la función de autocompletar.
+ */
+autocomplete = (inp, arr) => {
+    var currentFocus;
+    inp.addEventListener("input", function(e) {
+        var a, b, i, val = this.value;
+        closeAllLists();
+        if (!val) { return false;}
+        currentFocus = -1;
+        a = document.createElement("div");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        this.parentNode.appendChild(a);
+        for (i = 0; i < arr.length; i++) {
+          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            b = document.createElement("div");
+            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+            b.innerHTML += arr[i].substr(val.length);
+            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+            b.addEventListener("click", function(e) {
+                inp.value = this.getElementsByTagName("input")[0].value;
+                closeAllLists();
+            });
+            a.appendChild(b);
+          }
+        }
+    });
+    inp.addEventListener("keydown", function(e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+          currentFocus++;
+          addActive(x);
+        } else if (e.keyCode == 38) {
+          currentFocus--;
+          addActive(x);
+        } else if (e.keyCode == 13) {
+          e.preventDefault();
+          if (currentFocus > -1) {
+            if (x) x[currentFocus].click();
+          }
+        }
+    });
+    addActive = (x) =>{
+      if (!x) return false;
+      removeActive(x);
+      if (currentFocus >= x.length) currentFocus = 0;
+      if (currentFocus < 0) currentFocus = (x.length - 1);
+      x[currentFocus].classList.add("autocomplete-active");
+    }
+    removeActive = (x) => {
+      for (var i = 0; i < x.length; i++) {
+        x[i].classList.remove("autocomplete-active");
+      }
+    }
+    closeAllLists = (elmnt) => {
+      var x = document.getElementsByClassName("autocomplete-items");
+      for (var i = 0; i < x.length; i++) {
+        if (elmnt != x[i] && elmnt != inp) {
+          x[i].parentNode.removeChild(x[i]);
+        }
+      }
+    }
+    document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+    });
+}
+
+autocomplete(document.getElementById('pokeSearch'), pokeInfo.names);
+autocomplete(document.getElementById('pokeSearchXS'), pokeInfo.names);
+
+/**
  * Toma la entrada del usuario y luego usa esa entrada para obtener datos de PokeAPI.
  */
 const callPokeAPI = e => async () => {
