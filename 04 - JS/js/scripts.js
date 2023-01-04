@@ -30,9 +30,10 @@ document.addEventListener("DOMContentLoaded",pokenames());
  * @returns la función de autocompletar.
  */
 autocomplete = (inp, arr) => {
-    var currentFocus;
+    let currentFocus;
+    /* Se crea un elemento div y lo agrega al nodo principal del elemento de entrada. */
     inp.addEventListener("input", function(e) {
-        var a, b, i, val = this.value;
+        let a, b, i, val = this.value;
         closeAllLists();
         if (!val) { return false;}
         currentFocus = -1;
@@ -70,21 +71,36 @@ autocomplete = (inp, arr) => {
           }
         }
     });
-    addActive = (x) =>{
+    /**
+     * Si currentFocus es mayor que la longitud de la matriz, establezca currentFocus en 0. Si
+     * currentFocus es menor que 0, establezca currentFocus en la longitud de la matriz menos 1.
+     * @param x - la matriz de elementos que se están buscando a través de
+     * @returns el valor del campo de entrada.
+     */
+    const addActive = (x) =>{
       if (!x) return false;
       removeActive(x);
       if (currentFocus >= x.length) currentFocus = 0;
       if (currentFocus < 0) currentFocus = (x.length - 1);
       x[currentFocus].classList.add("autocomplete-active");
     }
-    removeActive = (x) => {
-      for (var i = 0; i < x.length; i++) {
+    /**
+     * Elimina la clase "autocomplete-active" de todos los elementos de la matriz x.
+     * @param x - la matriz de elementos de la que desea eliminar la clase
+     */
+    const removeActive = (x) => {
+      for (let i = 0; i < x.length; i++) {
         x[i].classList.remove("autocomplete-active");
       }
     }
-    closeAllLists = (elmnt) => {
+    /**
+     * Si el elemento en el que se hizo clic no es el campo de entrada o la lista de autocompletar,
+     * elimine la lista de autocompletar.
+     * @param elmnt - El elemento en el que se hizo clic.
+     */
+    const closeAllLists = (elmnt) => {
       var x = document.getElementsByClassName("autocomplete-items");
-      for (var i = 0; i < x.length; i++) {
+      for (let i = 0; i < x.length; i++) {
         if (elmnt != x[i] && elmnt != inp) {
           x[i].parentNode.removeChild(x[i]);
         }
