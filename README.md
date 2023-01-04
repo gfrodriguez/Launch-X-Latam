@@ -12,8 +12,8 @@ En este repositorio se dejarán las asignaciones del curso a medida que se vayan
 
 También puede ver el contenido desplegado en los siguientes enlaces:
 
-### [Práctica HTML](https://launch-x-latam-frontend.herokuapp.com/02%20-%20HTML/ "Práctica HTML")
-### [Práctica JS](https://launch-x-latam-frontend.herokuapp.com/04%20-%20JS/ "Práctica JS")
+### [Práctica HTML](https://gfrodriguez.github.io/Launch-X-Latam-Frontend/04%20-%20JS/02%20-%20HTML/ "Práctica HTML")
+### [Práctica JS](https://gfrodriguez.github.io/Launch-X-Latam-Frontend/04%20-%20JS/ "Práctica JS")
 
 
 
