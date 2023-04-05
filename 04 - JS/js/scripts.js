@@ -5,13 +5,16 @@ const alertThatPokeDoesNotExist = document.getElementById("alertThatPokeDoesNotE
 const progressBar = document.querySelectorAll(".progress-bar");
 const pokeInfo={};
 
+
 /**
- * Toma los nombres de los 905 Pokémon y los pone en una matriz.
- * @returns Una serie de nombres de Pokémon.
+ * La función recupera los nombres de los primeros 1000 Pokémon de PokeAPI y los almacena en una
+ * matriz.
+ * @returns La función `pokenames` devuelve una serie de nombres de los primeros 1000 Pokémon de
+ * PokeAPI.
  */
 const pokenames = async () => {
     pokeInfo.names = new Array();
-    for (let j = 1; j<905;j++){
+    for (let j = 1; j<=1000;j++){
         const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+j);
         const json = await response.json();
         pokeInfo.names.push(json.name);
